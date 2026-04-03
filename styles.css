@@ -1,0 +1,608 @@
+/* =========================================
+   Defino mis variables y setup inicial (Modo Oscuro)
+   ========================================= */
+:root {
+    --bg-dark: #050505;
+    --bg-card: #111111;
+    --accent-cyan: #00dbc5;
+    --text-main: #f4f4f4;
+    --text-muted: #a0a0a0;
+    --font-primary: 'Montserrat', sans-serif;
+    --transition-smooth: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    overflow-x: clip;
+}
+
+/* =========================================
+   Logo y Navegación
+   ========================================= */
+.logo-container {
+    position: absolute;
+    left: 5%;
+    top: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    position: absolute;
+    /* top: 10px; */
+    left: 0;
+    height: 180px;
+    width: auto;
+    z-index: 1001;
+    transition: var(--transition-smooth);
+    filter: drop-shadow(0 0 10px rgba(0, 219, 197, 0.15));
+}
+
+.logo-img:hover {
+    transform: scale(1.05) translateY(-3px);
+}
+
+main {
+    padding-top: 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    padding: 0 5%;
+    background: var(--bg-dark);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-cyan);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    z-index: 1002;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-main);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
+/* =========================================
+   Tipografía y Utilidades
+   ========================================= */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.highlight {
+    color: var(--accent-cyan);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+}
+
+/* =========================================
+   SISTEMA DE BOTONES (Incluye Cyber Corners)
+   ========================================= */
+.btn {
+    display: inline-block;
+    /* Aseguro el flujo correcto */
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+    /* Necesario para las esquinas */
+    z-index: 1;
+}
+
+/* --- DECORADOR: CYBER CORNERS (Versión Pixel Perfect) --- */
+.cyber-corners {
+    position: relative;
+    z-index: 1;
+    /* Añadimos el borde fino que se ve en la imagen original */
+    border: 1px solid rgba(0, 219, 197, 0.3);
+    background: transparent;
+    padding: 12px 30px;
+    /* Ajustamos el aire interno */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.cyber-corners::before,
+.cyber-corners::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    /* Más pequeñas, como en la foto */
+    height: 8px;
+    border: 2px solid var(--accent-cyan);
+    transition: var(--transition-smooth);
+    z-index: 2;
+}
+
+/* Esquina Superior Izquierda: La pegamos al borde (0px) */
+.cyber-corners::before {
+    top: -1px;
+    left: -1px;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+/* Esquina Inferior Derecha: La pegamos al borde (0px) */
+.cyber-corners::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: 0;
+    border-top: 0;
+}
+
+/* EFECTO HOVER */
+.cyber-corners:hover {
+    background: rgba(0, 219, 197, 0.05);
+    /* Un ligero brillo de fondo */
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+.cyber-corners:hover::before,
+.cyber-corners:hover::after {
+    width: 100%;
+    height: 100%;
+    /* Quitamos el box-shadow exagerado para que sea más limpio */
+}
+
+/* --- Variantes de botones --- */
+.btn-primary {
+    background-color: var(--accent-cyan);
+    color: var(--bg-dark);
+}
+
+.btn-outline {
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+/* Botones pequeños para cards */
+.btn-sm {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary-sm {
+    background-color: var(--accent-cyan);
+    color: var(--bg-dark);
+}
+
+.btn-outline-sm {
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+/* =========================================
+   Secciones y Grids
+   ========================================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    max-width: 160vh;
+    margin: 0 auto;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-photo-container {
+    flex-basis: 35%;
+    min-width: 300px;
+}
+
+.hero-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.hero-text-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    color: var(--text-muted);
+}
+
+.cta-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* =========================================
+   ESTILO DE TRAYECTORIA TÉCNICA (Timeline)
+   ========================================= */
+
+/* --- CONTENEDOR 3D --- */
+.flip-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    perspective: 1000px;
+    /* Crea el plano de profundidad */
+    margin-top: 3rem;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 350px;
+    height: 400px;
+    cursor: pointer;
+}
+
+/* El "motor" del giro */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    /* Clave para que el 3D no se aplane */
+}
+
+/* Activación del giro (Hover o Click) */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Reglas comunes para ambas caras */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* Oculta la cara que queda detrás */
+    border-radius: 12px;
+    border: 1px solid rgba(0, 219, 197, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* --- CARA FRONTAL --- */
+.flip-card-front {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.badge-neon {
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.tap-hint {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 2rem;
+    opacity: 0.6;
+}
+
+/* --- CARA TRASERA --- */
+.flip-card-back {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    transform: rotateY(180deg);
+    /* Ya nace girada */
+    text-align: left;
+}
+
+.flip-card-back h4 {
+    color: var(--accent-cyan);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.flip-card-back li {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+    list-style: none;
+    position: relative;
+    padding-left: 15px;
+}
+
+.flip-card-back li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+}
+
+/* =========================================
+   SISTEMAS DE TARJETAS (Restaurado)
+   ========================================= */
+.tech-card,
+.project-card {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    /* El padding original de tu imagen */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* Alineación original */
+}
+
+.tech-card:hover,
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
+}
+
+.tech-card i {
+    font-size: 2rem;
+    /* Tamaño de icono original */
+    color: var(--accent-cyan);
+    margin-bottom: 1.5rem;
+}
+
+.projects .grid-container {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* =========================================
+   Footer e Interacciones
+   ========================================= */
+.footer {
+    text-align: center;
+    padding: 4rem 5%;
+    background-color: var(--bg-card);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-links {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+}
+
+.social-links a:hover {
+    color: var(--accent-cyan);
+    transform: translateY(-3px);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   Responsive (Media Queries)
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .hero-text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .logo-container {
+        position: static;
+    }
+
+    .logo-img {
+        position: absolute;
+        left: 38%;
+        /* transform: translateX(-50%); */
+        height: 87px;
+        z-index: 1005;
+        top: 12px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 100px;
+        flex-direction: column;
+        background-color: var(--bg-card);
+        width: 100%;
+        height: calc(100vh - 60px);
+        text-align: center;
+        transition: var(--transition-smooth);
+        padding-top: 3rem;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .cta-container {
+        flex-direction: column;
+    }
+
+    main {
+        padding-top: 117px;
+    }
+
+    .navbar {
+        height: 100px;
+        z-index: 1000;
+    }
+
+    /* Forzamos el cambio de Grid a Stack vertical */
+    .flip-card-container {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+        padding: 0 20px !important;
+    }
+
+    .flip-card {
+        width: 100% !important;
+        max-width: 320px;
+        /* Tamaño ideal para móvil */
+        height: 380px !important;
+    }
+
+    /* Reducimos el tamaño de la fuente para que no rompa el diseño */
+    .flip-card-front h3 {
+        font-size: 1.2rem;
+    }
+
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Franky | Frontend Architect & AEM Developer</title>
+    <meta name="description"
+        content="Portfolio de Mi Franky, Frontend Architect y desarrollador experto en Adobe Experience Manager (AEM), HTL, JavaScript Vanilla y arquitecturas MVC.">
+    <meta name="keywords"
+        content="Frontend Architect, AEM Developer, Adobe Experience Manager, HTL, Core Components, JavaScript, PHP MVC">
+    <meta name="author" content="Fran Guisado Pérez">
+    <meta name="theme-color" content="#050505">
+
+    <!-- Fuentes: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="#about">
+                <img src="img/LogoFGDev.png" alt="GPDev Logo" class="logo-img">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#stack">Tech Stack</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Añado mi botón hamburguesa para gestionar el menú responsivo, garantizando la accesibilidad -->
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- 1. Hero -->
+        <section id="about" class="hero reveal">
+            <!-- Monto mi layout de dos columnas para la sección Hero -->
+            <div class="hero-layout">
+                <!-- Defino el contenedor para mi foto personal -->
+                <div class="hero-photo-container">
+                    <img src="img/FotoWeb.png" alt="Foto de Fran Pérez, Arquitecto Frontend" class="hero-photo">
+                </div>
+                <!-- Agrupo mi contenido de texto en la segunda columna -->
+                <div class="hero-text-content">
+                    <h1>Hola, soy <span class="highlight">Fran Pérez </span></h1>
+                    <h2>Frontend Architect & AEM Developer</h2>
+                    <p>Diseño y construyo experiencias digitales escalables, de alto rendimiento y con código limpio. Me
+                        especializo en arquitecturas frontend sólidas y en el ecosistema de Adobe Experience Manager.
+                    </p>
+                    <div class="cta-container">
+                        <a href="#projects" class="btn cyber-corners">Ver mis proyectos</a>
+                        <a href="assets/cv_franky.pdf" target="_blank" class="btn cyber-corners">Descargar CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Tech Stack -->
+        <section id="stack" class="tech-stack reveal">
+            <h2>Mi <span class="highlight">Ecosistema</span> Tecnológico</h2>
+            <div class="grid-container">
+                <article class="tech-card">
+                    <i class="fa-brands fa-js"></i>
+                    <h3>JavaScript Vanilla</h3>
+                    <p>ES6+, manipulación avanzada del DOM, APIs y asincronía sin depender de frameworks.</p>
+                </article>
+                <article class="tech-card aem-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Adobe Experience Manager</h3>
+                    <p>Experto en <strong>AEM Core Components</strong>, maquetación con <strong>HTL (Sightly)</strong> y
+                        ecosistema <strong>Adobe Cloud</strong>.</p>
+                </article>
+                <article class="tech-card">
+                    <i class="fa-brands fa-php"></i>
+                    <h3>PHP & Patrón MVC</h3>
+                    <p>Desarrollo de arquitecturas backend limpias, escalables y seguras usando PHP estructurado.</p>
+                </article>
+                <article class="tech-card">
+                    <i class="fa-brands fa-git-alt"></i>
+                    <h3>Git & Arquitectura</h3>
+                    <p>Control de versiones, flujos CI/CD y diseño de sistemas semánticos (HTML5/CSS3 Grid).</p>
+                </article>
+                <!-- Añado mi tarjeta para SQL y Bases de Datos -->
+                <article class="tech-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>SQL & Bases de Datos</h3>
+                    <p>Modelado relacional y gestión de datos estructurados para conectar de forma eficiente el backend
+                        con la interfaz.</p>
+                </article>
+                <!-- Integro mi tarjeta para Figma y diseño UI/UX -->
+                <article class="tech-card">
+                    <i class="fa-brands fa-figma"></i>
+                    <h3>Figma & UI/UX</h3>
+                    <p>Interpretación de sistemas de diseño, prototipado y traslación de interfaces visuales a código
+                        frontend 'pixel-perfect'.</p>
+                </article>
+                <!-- Incorporo mis conocimientos en scripting con Python -->
+                <article class="tech-card">
+                    <i class="fa-brands fa-python"></i>
+                    <h3>Python Fundamentals</h3>
+                    <p>Scripting básico y automatización de tareas para optimizar flujos de trabajo en el desarrollo
+                        diario.</p>
+                </article>
+                <!-- Añado mi experiencia con IA y Agentes Inteligentes -->
+                <article class="tech-card">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>IA & Agentes Inteligentes</h3>
+                    <p>Exploración activa e integración temprana de modelos de lenguaje (LLMs) y flujos automatizados
+                        con IA en la arquitectura web.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. Proyectos -->
+        <section id="projects" class="projects reveal">
+            <h2>Proyectos <span class="highlight">Destacados</span></h2>
+            <div class="grid-container">
+                <div class="grid-container">
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>📚 GPDev UI Core</h3>
+                            <p>Librería de componentes UI accesibles construida desde cero con Vanilla JS y CSS
+                                Grid. Incluye un Smart Accordion interactivo, semántico (ARIA) y optimizado para
+                                evitar reflows en el motor del navegador.</p>
+                            <!-- Configuro los botones de mis proyectos destacando la Demo como acción principal -->
+                            <div class="project-links">
+                                <a href="https://FranGPDev.github.io/gpdev-ui-core/" target="_blank"
+                                    class="btn-sm btn-primary-sm cyber-corners"><i
+                                        class="fa-solid fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/FranGPDev/gpdev-ui-core" target="_blank"
+                                    class="btn-sm btn-outline-sm cyber-corners"><i class="fa-brands fa-github"></i>
+                                    Código</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3 class="item-title">🛒 GPDev Shopping Cart</h3>
+                            <p class="item-description">Desarrollo de un motor de compras robusto. He implementado
+                                tipado estricto mediante TypeScript, gestión de estado compleja (State Management) para
+                                el manejo de productos y persistencia de datos con LocalStorage.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Vanilla JS</span>
+                                <span class="tech-tag">State Logic</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://FranGPDev.github.io/gpdev-shopping-cart/" target="_blank"
+                                    class="btn-sm btn-primary-sm cyber-corners"><i
+                                        class="fa-solid fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/FranGPDev/gpdev-shopping-cart" target="_blank"
+                                    class="btn-sm btn-outline-sm cyber-corners"><i class="fa-brands fa-github"></i>
+                                    Código</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3 class="item-title">👾 GPDev Space Invader</h3>
+                            <p class="item-description">Desarrollo de un motor de videojuegos 2D retro. He implementado
+                                arquitectura de estados para el flujo del juego (Menu/Playing/GameOver), renderizado
+                                asíncrono de assets mediante Canvas API y lógica matemática de colisiones AABB.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">HTML5 Canvas</span>
+                                <span class="tech-tag">OOP</span>
+                                <span class="tech-tag">Game Logic</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://FranGPDev.github.io/gpdev-space-invaders/" target="_blank"
+                                    class="btn-sm btn-primary-sm cyber-corners"><i
+                                        class="fa-solid fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/FranGPDev/gpdev-space-invaders" target="_blank"
+                                    class="btn-sm btn-outline-sm cyber-corners"><i class="fa-brands fa-github"></i>
+                                    Código</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3 class="item-title">💎 GPDev Buttons - Neon Gallery</h3>
+                            <p class="item-description">Laboratorio de micro-interacciones de alto rendimiento. He
+                                desarrollado 20 componentes atómicos utilizando CSS avanzado, animaciones optimizadas
+                                por GPU y funciones de tiempo Bézier personalizadas.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-tag">CSS3 Advanced</span>
+                                <span class="tech-tag">UI/UX Design</span>
+                                <span class="tech-tag">GPU Rendering</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://FranGPDev.github.io/gpdev-neon-buttons/" target="_blank"
+                                    class="btn-sm btn-primary-sm cyber-corners"><i
+                                        class="fa-solid fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/FranGPDev/gpdev-neon-buttons" target="_blank"
+                                    class="btn-sm btn-outline-sm cyber-corners"><i class="fa-brands fa-github"></i>
+                                    Código</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- Aquí puedes añadir más tarjetas de proyecto -->
+            </div>
+        </section>
+
+        <!-- 4. Experiencia y Educación -->
+        <section id="experience" class="experience-section reveal">
+            <h2>Trayectoria <span class="highlight">Técnica</span></h2>
+
+            <div class="flip-card-container">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-icon">🏗️</div>
+                            <h3>Frontend Architect</h3>
+                            <span class="badge-neon">AEM Specialist</span>
+                            <p class="tap-hint">Detalles del ecosistema</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Ecosistema Enterprise</h4>
+                            <ul class="trayectoria-lista-tecnica">
+                                <li>Desarrollo de componentes UI para **Adobe Experience Manager**.</li>
+                                <li>Integración de librerías atómicas en **AEM Core Components**.</li>
+                                <li>Gestión de maquetación con **HTL (Sightly)** y diálogos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-icon">⚡</div>
+                            <h3>Performance Eng.</h3>
+                            <span class="badge-neon">Core Web Vitals</span>
+                            <p class="tap-hint">Detalles de optimización</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Rendimiento Crítico</h4>
+                            <ul class="trayectoria-lista-tecnica">
+                                <li>Optimización de carga mediante control de **GPU** y **Reflows**.</li>
+                                <li>Estrategias de renderizado para maximizar **LCP** y **FID**.</li>
+                                <li>Reducción de bloqueo del hilo principal mediante limpieza de **DOM**.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-icon">⚙️</div>
+                            <h3>Logic Architect</h3>
+                            <span class="badge-neon">TS / Vanilla JS</span>
+                            <p class="tap-hint">Detalles de ingeniería</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Ingeniería de Software</h4>
+                            <ul class="trayectoria-lista-tecnica">
+                                <li>Creación de lógica de negocio y motores con **TypeScript**.</li>
+                                <li>Desarrollo de sistemas complejos sin dependencias externas.</li>
+                                <li>Implementación de patrones de diseño **MVC** y estados.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer reveal">
+        <h2>Hablemos de <span class="highlight">Código</span></h2>
+        <p>¿Buscas llevar tu arquitectura al siguiente nivel? Contáctame.</p>
+        <div class="social-links">
+            <a href="mailto:frangp05@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/fran-guisado-p%C3%A9rez-0b9749223/" target="_blank" rel="noopener"
+                aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/FranGP05" target="_blank" rel="noopener" aria-label="GitHub"><i
+                    class="fa-brands fa-github"></i></a>
+        </div>
+        <p class="copyright">© 2026 GPDev. Diseñado desde cero sin frameworks.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
